@@ -25,7 +25,22 @@ def index():
 
 
 # The following code is extracted from `pythontop40server`
+# https://bitbucket.org/dannygoodall/pythontop40server
+
 # Copyright 2014 Danny Goodall
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 def strip_number_suffix(string):
     return re.sub(r'(\d)(st|nd|rd|th)', r'\1', string)
 
@@ -68,6 +83,8 @@ def get_change_dict(position, previous):
     return dict(direction=direction, actual=actual, amount=amount)
 
 
+# Modifications Copyright 2016 Kevin Ndung'u
+# Amend date parsing logic to match updated Page Title Format
 def get_page_date(page_title):
     """Return the date of the chart by extracting it from the title
 

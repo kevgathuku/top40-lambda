@@ -7,16 +7,22 @@ import requests
 from HTMLParser import HTMLParseError
 from chalice import Chalice
 
+# from flask import Flask, jsonify
+
 
 app = Chalice(app_name='top40-chalice')
+# app = Flask('top40-chalice')
+
 
 # The return object is a plain dict, unlike Flask, which expects a response
 @app.route('/')
 def index():
+    # return jsonify({'hello': 'world'})
     return {'hello': 'world'}
 
 # The view function above will return {"hello": "world"}
-# whenver you make an HTTP GET request to '/'.
+# whenever you make an HTTP GET request to '/'.
+
 
 # The following code is extracted from `pythontop40server`
 # Copyright 2014 Danny Goodall
@@ -97,13 +103,13 @@ def get_page_date(page_title):
     """
     if not page_title:
         raise Exception("No title was found in the html document")
-    if not "-" in page_title:
+    if "-" not in page_title:
         raise Exception("Page title incorrectly formed.")
 
     # Split the page title on the - and take the right hand side
-    date_string = page_title.split("-")[1].lstrip()
+    date_string = ' '.join(page_title.split("-")[1].lstrip().split(' ')[1:])
     # Remove the number suffix st, nd, rd, th
-    date_string = strip_number_suffix(date_string)
+    date_string = '{} {}'.format(strip_number_suffix(date_string), arrow.now().year)
     # Create a date format
     try:
         date_of_chart = arrow.get(date_string, ["D MMMM YYYY", "DD MMMM YYYY"])
@@ -296,3 +302,9 @@ def scrape_bbc_page(chart_type="singles"):
     chart_dict["entries"] = entries
 
     return chart_dict
+    # Flask
+    # return jsonify(chart_dict)
+
+# Flask
+# if __name__ == '__main__':
+#     app.run(debug=True)

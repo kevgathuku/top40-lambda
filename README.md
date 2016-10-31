@@ -12,13 +12,13 @@ Powered by:
  - [PythonTop40Server](https://bitbucket.org/dannygoodall/pythontop40server)
 
 
- ## Quickstart
+## Quickstart
 
  Make an HTTP get request to [the singles API endpoint](https://wckb0ftk67.execute-api.eu-west-1.amazonaws.com/dev/singles) to get the current charts in JSON format.
 
- #### Example:
+#### Example:
 
- ```sh
+```sh
 pip install httpie
 ```
 
@@ -26,36 +26,36 @@ pip install httpie
 http https://wckb0ftk67.execute-api.eu-west-1.amazonaws.com/dev/singles
  ```
 
- Sample Response:
- ```json
-   "date": 1477612800,
-   "retrieved": 1477750015,
-   "entries": [
-     {
-       "status": "NON MOVER",
-       "artist": "Little Mix",
-       "title": "Shout Out To My Ex",
-       "previousPosition": 1,
-       "position": 1,
-       "numWeeks": 2,
-       "change": {
-         "amount": 0,
-         "actual": 0,
-         "direction": "none"
-       }
-     },
-   ]
- ```
+Sample Response:
+```json
+ "date": 1477612800,
+ "retrieved": 1477750015,
+ "entries": [
+   {
+     "status": "NON MOVER",
+     "artist": "Little Mix",
+     "title": "Shout Out To My Ex",
+     "previousPosition": 1,
+     "position": 1,
+     "numWeeks": 2,
+     "change": {
+       "amount": 0,
+       "actual": 0,
+       "direction": "none"
+     }
+   },
+ ]
+```
 
- ### Response Data Format:
+### Response Data Format:
 
- ```json
- {
-   "date": "Date the Charts were Released",
-   "retrieved": "Current Date",
-   "Entries": "Array of singles in the current Charts"
- }
- ```
+```json
+{
+ "date": "Date the Charts were Released",
+ "retrieved": "Current Date",
+ "Entries": "Array of singles in the current Charts"
+}
+```
 
-## Source of Data
- - [The Official UK Top 40 Singles Chart](https://www.bbc.co.uk/radio1/chart/singles/print)
+## Data Source
+[The Official UK Top 40 Singles Chart](https://www.bbc.co.uk/radio1/chart/singles/print)

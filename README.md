@@ -7,8 +7,8 @@ Replacement of the no-longer-available
 and alternative to the [PythonTop40Server](https://pythontop40server.herokuapp.com)
 
 Powered by:
- - Python 2
- - [Chalice](github.com/awslabs/chalice)
+ - [Python 2](https://www.python.org/)
+ - [Chalice](https://github.com/awslabs/chalice)
  - [PythonTop40Server](https://bitbucket.org/dannygoodall/pythontop40server)
 
 
@@ -20,7 +20,9 @@ Powered by:
 
  ```sh
 pip install httpie
+```
 
+```
 http https://wckb0ftk67.execute-api.eu-west-1.amazonaws.com/dev/singles
  ```
 
@@ -42,7 +44,7 @@ http https://wckb0ftk67.execute-api.eu-west-1.amazonaws.com/dev/singles
          "direction": "none"
        }
      },
-     ...
+   ]
  ```
 
  ### Response Data Format:
@@ -56,4 +58,4 @@ http https://wckb0ftk67.execute-api.eu-west-1.amazonaws.com/dev/singles
  ```
 
 ## Source of Data
- - [The Official UK Top 40 Singles Chart](www.bbc.co.uk/radio1/chart/singles/print)
+ - [The Official UK Top 40 Singles Chart](https://www.bbc.co.uk/radio1/chart/singles/print)

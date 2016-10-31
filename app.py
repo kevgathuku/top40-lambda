@@ -136,7 +136,7 @@ def get_page_date(page_title):
     return date_of_chart
 
 
-@app.route('/singles')
+@app.route('/singles', methods=['GET'], cors=True)
 def scrape_bbc_page(chart_type="singles"):
     """Scrape the relevant page on the BBC website and return chart information
 

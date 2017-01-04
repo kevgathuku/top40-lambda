@@ -10,7 +10,7 @@ Powered by:
  - [Python 2](https://www.python.org/)
  - [Chalice](https://github.com/awslabs/chalice)
  - [PythonTop40Server](https://bitbucket.org/dannygoodall/pythontop40server)
-
+ - [AWS Lambda](https://aws.amazon.com/lambda/)
 
 ## Quickstart
 

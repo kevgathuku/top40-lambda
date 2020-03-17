@@ -1,0 +1,4 @@
+requests==2.23.0
+chalice==1.13.0
+beautifulsoup4==4.8.2
+arrow==0.15.5

@@ -1,20 +1,21 @@
 # UK Top 40 Singles Chart API
 
-Provides [The Official UK Top 40 Singles Chart](www.bbc.co.uk/radio1/chart/singles/) as a JSON API.
+Provides [The Official UK Top 40 Singles Chart](https://www.bbc.co.uk/radio1/chart/singles/) as a JSON API.
 
 Replacement of the no-longer-available
 [Ben Major UK Top 40 API](https://web.archive.org/web/20140418084450/http://ben-major.co.uk/labs/top40/api/singles)
 and alternative to the [PythonTop40Server](https://pythontop40server.herokuapp.com)
 
 Powered by:
- - [Python 2](https://www.python.org/)
- - [Chalice](https://github.com/awslabs/chalice)
- - [PythonTop40Server](https://bitbucket.org/dannygoodall/pythontop40server)
- - [AWS Lambda](https://aws.amazon.com/lambda/)
+
+- [Python 3](https://www.python.org/)
+- [Chalice](https://github.com/awslabs/chalice)
+- [PythonTop40Server](https://bitbucket.org/dannygoodall/pythontop40server)
+- [AWS Lambda](https://aws.amazon.com/lambda/)
 
 ## Quickstart
 
- Make an HTTP get request to [the singles API endpoint](https://wckb0ftk67.execute-api.eu-west-1.amazonaws.com/dev/singles) to get the current charts in JSON format.
+Make an HTTP get request to [the singles API endpoint](https://wckb0ftk67.execute-api.eu-west-1.amazonaws.com/dev/singles) to get the current charts in JSON format.
 
 #### Example:
 
@@ -24,9 +25,10 @@ pip install httpie
 
 ```
 http https://wckb0ftk67.execute-api.eu-west-1.amazonaws.com/dev/singles
- ```
+```
 
 Sample Response:
+
 ```json
  "date": 1477612800,
  "retrieved": 1477750015,
@@ -51,11 +53,12 @@ Sample Response:
 
 ```json
 {
- "date": "Date the Charts were Released",
- "retrieved": "Current Date",
- "Entries": "Array of singles in the current Charts"
+  "date": "Date the Charts were Released",
+  "retrieved": "Current Date",
+  "Entries": "Array of singles in the current Charts"
 }
 ```
 
 ## Data Source
+
 [The Official UK Top 40 Singles Chart](https://www.bbc.co.uk/radio1/chart/singles/print)

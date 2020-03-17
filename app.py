@@ -4,7 +4,6 @@ import bs4
 import arrow
 import requests
 
-from HTMLParser import HTMLParseError
 from chalice import Chalice
 
 # from flask import Flask, jsonify
@@ -275,7 +274,7 @@ def scrape_bbc_page(chart_type="singles"):
     # We could get parse errors in the HTML, so let's raise an Exception if we do
     try:
         soup = bs4.BeautifulSoup(html_text.text, "html.parser")
-    except (UnicodeEncodeError, KeyError, AttributeError, HTMLParseError) as e:
+    except (UnicodeEncodeError, KeyError, AttributeError) as e:
         raise Exception("Couldn't parse the text from "+page)
 
     # Now grab the date of the chart from the page title

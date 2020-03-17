@@ -73,11 +73,11 @@ def get_change_dict(position, previous):
     actual = (previous if previous else 41) - position
     amount = abs(actual)
     if actual > 0:
-        direction="up"
+        direction = "up"
     elif actual < 0:
-        direction="down"
+        direction = "down"
     else:
-        direction="none"
+        direction = "none"
 
     return dict(direction=direction, actual=actual, amount=amount)
 
@@ -125,7 +125,8 @@ def get_page_date(page_title):
     # Split the page title on the - and take the right hand side
     date_string = ' '.join(page_title.split("-")[1].lstrip().split(' ')[1:])
     # Remove the number suffix st, nd, rd, th
-    date_string = '{} {}'.format(strip_number_suffix(date_string), arrow.now().year)
+    date_string = '{} {}'.format(
+        strip_number_suffix(date_string), arrow.now().year)
     # Create a date format
     try:
         date_of_chart = arrow.get(date_string, ["D MMMM YYYY", "DD MMMM YYYY"])
@@ -267,7 +268,8 @@ def scrape_bbc_page(chart_type="singles"):
         html_text = requests.get(page)
         html_text.encoding = 'utf-8'
     except (requests.exceptions.ConnectionError, requests.exceptions.ConnectTimeout) as e:
-        raise Exception("A connection error or connection timeout error occurred.")
+        raise Exception(
+            "A connection error or connection timeout error occurred.")
     except requests.exceptions.HTTPError as e:
         raise Exception("An HTTP error was returned from the remote server")
 
@@ -297,13 +299,15 @@ def scrape_bbc_page(chart_type="singles"):
             dict_key, conversion_type = column_info
 
             # Set the column string or initialise an equivalent type if it is None
-            column_string = table_data[column].string.encode('utf-8') if table_data[column].string else conversion_type()
+            column_string = table_data[column].string if table_data[column].string else conversion_type(
+            )
 
             # Assign the value from the web table to our entry dictionary, converting it as we go
             entry_dict[dict_key] = conversion_type(column_string)
 
         # Compute the change dict, based on this entry
-        change_dict = get_change_dict(entry_dict["position"], entry_dict["previousPosition"])
+        change_dict = get_change_dict(
+            entry_dict["position"], entry_dict["previousPosition"])
 
         # Store the change dict away in the "change" key of our entry dict
         entry_dict["change"] = change_dict

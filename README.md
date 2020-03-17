@@ -15,7 +15,7 @@ Powered by:
 
 ## Quickstart
 
-Make an HTTP get request to [the singles API endpoint](https://wckb0ftk67.execute-api.eu-west-1.amazonaws.com/dev/singles) to get the current charts in JSON format.
+Make an HTTP get request to [the singles API endpoint](https://htpkwhl59f.execute-api.eu-central-1.amazonaws.com/api/singles) to get the current charts in JSON format.
 
 #### Example:
 

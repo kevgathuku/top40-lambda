@@ -1,4 +1,0 @@
-requests==2.11.1
-beautifulsoup4==4.5.1
-arrow==0.8.0
-chalice==0.3.0

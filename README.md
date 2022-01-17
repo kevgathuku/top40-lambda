@@ -1,4 +1,4 @@
-# UK Top 40 Singles Chart API
+# [Deprecated] UK Top 40 Singles Chart API
 
 Provides [The Official UK Top 40 Singles Chart](https://www.bbc.co.uk/radio1/chart/singles/) as a JSON API.
 
